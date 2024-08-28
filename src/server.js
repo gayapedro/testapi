@@ -7,7 +7,7 @@ app.use(express.json())
 const produtos = [];
 
 app.get('/produto', (req, res) => {
-  return res.status(201).json(produtos);
+  return res.status(200).json(produtos);
 });
 
 app.get('/produto/:id', (req, res) => {
