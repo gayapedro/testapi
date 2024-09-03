@@ -21,18 +21,18 @@ app.get('/produto', (req, res) => {
 //   return res.status(200).json(produto);
 // });
 
-// app.post('/produto', (req, res) => {
+app.post('/produto', (req, res) => {
 
-//   const produto = produtos.find(p => p.id === req.body.id);
+  const produto = produtos.find(p => p.id === req.body.id);
 
 
-//   if (produto) {
-//     return res.status(400).json({ message: "Id já cadastrado" })
-//   }
+  if (produto) {
+    return res.status(400).json({ message: "Id já cadastrado" })
+  }
 
-//   produtos.push(req.body)
+  produtos.push(req.body)
 
-//   return res.status(201).json(req.body);
-// })
+  return res.status(201).json(req.body);
+})
 
 app.listen(3000, () => console.log('Servidor em execução na porta 3000'));
